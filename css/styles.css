@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*for global styles * /
+
+
+/* footer styles */
+@layer base {
+    :root {
+        --primary: 182, 99%, 35%;
+        --secondary: 25, 95%, 53%;
+        --background: 207, 95%, 8%;
+    }
+}
+.custom-column {
+  margin-right: 10px;
+}
+
+.emaild {
+    border: 2px solid white;
+    border-radius: 8px;
+}
+.emaild::placeholder {
+  color: rgb(254, 253, 253) !important;
+}
+.formb {
+    color: white !important;
+    border: 1.5px solid white !important;
+    background-color: #2385C6;
+}
+
+.formb:hover {
+    background-color: #4056a1;
+    color: #fff !important;
+}
+
+.footerheading {
+    color: white;
+    font-weight: bolder;
+}
+
+.footli {
+    color: rgba(255, 255, 255, 0.881);
+}
+.footlast p{
+    color: white;
+}
+.footlast a{
+    color: white;
+}
+.sico{
+  transition: background-color 1s ease;
+}
+.sico:hover{
+  background: #4056a1;
+}
+.testimonialbtn:hover{
+  background: #4056a1;
+}
+
+/* footer styles end */
+
+
+
+/* HSec4 of home page Scetion 2 of soultion page common */
+
+
+.box_shadow{
+  box-shadow: 0px 0px 60px rgba(0, 179, 255, 0.585);
+}
+.icon-shadow {
+  box-shadow: 0px 0px 40px rgba(0, 179, 255, 0.585);
+}
+  .chbox {
+    overflow: hidden;
+  } 
+
+/* HSec4 of home page Scetion 2 of soultion page common */

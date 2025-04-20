@@ -1,0 +1,135 @@
+.map {
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.iconbox {
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-container:hover {
+  background: linear-gradient(45deg, #2385C6, #53C4D1);
+  transition: 1s;
+}
+.icondivb{
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cmicon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+  stroke: #2385C6;
+  /* Use the gradient as stroke */
+  transition: stroke 2s;
+}
+
+.icon-container:hover .cmicon {
+  stroke: white;
+  /* Change stroke color on hover */
+}
+
+.icon-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  background: linear-gradient(180deg, #2385C6 0%, #53C4D1 100%) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.icon {
+  font-size: 25px;
+  z-index: 1;
+  /* Ensure the icon is above the pseudo-element */
+}
+
+
+/* Contact Us form Css */
+.fbox {
+  position: relative;
+  padding: 1.3rem;
+  margin-top: 2rem;
+
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(45deg, #2385C6, #53C4D1) border-box;
+  border: 2.5px solid transparent;
+  border-radius: 8px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(45deg, #2385C6, #53C4D1) border-box;
+  border: 2px solid transparent;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.formbutton {
+  border: 1.5px solid #2385C6;
+  color: #2385C6;
+  transition: 1s ease;
+}
+
+.formbutton:hover {
+  background-color: #2385C6;
+  color: white;
+}
+
+
+
+/* form styles end here */

@@ -1,0 +1,28 @@
+
+run index.html file directly using live server make sure internet is connected and stable...
+
+Spinovix App/
+├── index.html             # entry point ( home page code) main file of website
+|
+├── assets/                # Folder for storing all images , videos , gif directly in this folder
+│
+├── css/                   # Folder for all CSS files
+│   └── styles.css         # global styles common
+│   └── contact.css
+│   └── home.css
+│   └── solution.css
+│
+├── js/                    # Folder for all JavaScript files
+│   └── header.js
+│   └── footer.js
+│   └── form.js            # contact form functions
+│   └── Marquee.js         # Marquee effect of home page solutions section
+│   └── testimonal.js
+│   └── tailwind.config.js  # tailwind configuration file
+│
+├── components/            # Folder for main pages
+│  └ Solution/              # Folder for Solution page
+│    └── solution.html
+|
+│  └ Contact/              # Folder for Contact page
+│    └── contact.html
