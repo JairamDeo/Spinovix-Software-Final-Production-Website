@@ -24,9 +24,9 @@ class SpecialHeader extends HTMLElement {
 
   render() {
     // Use different links based on environment
-    const homeLink = this.isLocalDev ? '/index.html' : '/';
+    const homeLink = this.isLocalDev ? '/index.html' : '/home';
     const solutionLink = this.isLocalDev ? '/components/solution/solution.html' : '/solution';
-    const contactLink = this.isLocalDev ? '/components/contact/contact.html' : '/contact';
+    const contactLink = this.isLocalDev ? '/components/contact/contact.html' : '/contact';    
 
     this.innerHTML = `
       <!-- Header ( Navbar ) code start here -->

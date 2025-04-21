@@ -1,13 +1,7 @@
 {
-  "routes": [
-    { 
-      "src": "/solution", 
-      "dest": "/components/solution/solution.html" 
-    },
-    { 
-      "src": "/contact", 
-      "dest": "/components/contact/contact.html" 
-    }
-  ],
-  "cleanUrls": true
+  "rewrites": [
+    { "source": "/home", "destination": "/index.html" },
+    { "source": "/solution", "destination": "/components/solution/solution.html" },
+    { "source": "/contact", "destination": "/components/contact/contact.html" }
+  ]
 }

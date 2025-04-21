@@ -1,13 +1,16 @@
-# Remove .html extension
 RewriteEngine On
+RewriteBase /
+
+# Home page
+RewriteRule ^home$ /index.html [L]
+
+# Solution page
+RewriteRule ^solution$ /components/solution/solution.html [L]
+
+# Contact page
+RewriteRule ^contact$ /components/contact/contact.html [L]
+
+# Remove .html extensions for direct access (optional if you want to allow solution.html etc. access directly)
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [NC,L]
-
-# Redirect /index.html to /
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-RewriteRule ^index\.html$ / [R=301,L]
-
-# Clean URLs for components
-RewriteRule ^solution/?$ components/solution/solution.html [NC,L]
-RewriteRule ^contact/?$ components/contact/contact.html [NC,L]
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
