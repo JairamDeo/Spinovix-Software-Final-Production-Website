@@ -293,6 +293,11 @@ a.solution-button2:hover {
 /* Sec4 styles end */
 
 /* HSec5 testimonal styles */
+
+.testimonial-section{
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
 .testmain {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 
