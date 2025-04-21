@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      { "source": "/", "destination": "/index.html" },
+      { "source": "/solution", "destination": "/components/solution/solution.html" },
+      { "source": "/contact", "destination": "/components/contact/contact.html" }
+    ],
+    "cleanUrls": true
+  }
