@@ -1,7 +1,7 @@
 class SpecialFooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-    <footer class="text-white py-5 px-7 md:px-[96px] bg-[#53C4D1]">
+    <footer class="text-white py-5 px-[25px] md:px-[96px] bg-[#53C4D1]">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-2 md:grid-cols-4">
                 <div class="custom-column">
@@ -58,9 +58,9 @@ class SpecialFooter extends HTMLElement {
                         </li>
                     </ul>
                 </div>
-                <div class="custom-column  md:flex-1">
+                <div class="custom-column md:flex-1">
                     <h4 class="footerheading text-[18px] text-lg font-bold mb-4">Stay in Touch</h4>
-                  <p class="text-[16px] footli hover:text-blue-800 duration-500">
+                    <p class="text-[16px] footli hover:text-blue-800 duration-500">
                         Get cloud security insights and the latest Spinnovix news
                     </p>
                     <form class="mt-4" id="subscription-form">
@@ -125,11 +125,11 @@ class SpecialFooter extends HTMLElement {
                         </div>
                     </a>
 
-    </div>
-</div>            
-
+                </div>
+            </div>            
+        </div>
     </footer>    
-    `;
+        `;
     }
 }
 
