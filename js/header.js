@@ -3,23 +3,31 @@ class SpecialHeader extends HTMLElement {
     super();
     this.scrolled = false;
     this.toggle = false;
-    
+
     // Easter egg: Secret code sequence
     this.easterEggCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
     this.currentSequence = [];
   }
 
   connectedCallback() {
+    // Check if we're in local development or production
+    this.isLocalDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
     this.render();
     this.addStyles();
     this.addEventListeners();
     this.highlightActiveLink();
-    
+
     // Add Easter egg key listener
     document.addEventListener('keydown', this.handleKeyDown.bind(this));
   }
 
   render() {
+    // Use different links based on environment
+    const homeLink = this.isLocalDev ? '/index.html' : '/';
+    const solutionLink = this.isLocalDev ? '/components/solution/solution.html' : '/solution';
+    const contactLink = this.isLocalDev ? '/components/contact/contact.html' : '/contact';
+
     this.innerHTML = `
       <!-- Header ( Navbar ) code start here -->
       <div id="header" class="w-full h-[90px] py-[80px">
@@ -28,9 +36,9 @@ class SpecialHeader extends HTMLElement {
             <div class="bg-Logo w-[200px] h-[60px] bg-contain bg-no-repeat"></div>
           </div>
           <div class="md:flex hidden gap-[34px] items-center">
-            <a href="/index.html" class='nav-link text-[14px] font-bold leading-[17.6px]'>Home</a>
-            <a href="/components/solution/solution.html" class='nav-link text-[14px] font-bold leading-[17.6px]'>Solution</a>
-            <a href="/components/contact/contact.html" class='nav-link text-[14px] font-bold leading-[17.6px]'>Contact us</a>
+            <a href="${homeLink}" class='nav-link text-[14px] font-bold leading-[17.6px]'>Home</a>
+            <a href="${solutionLink}" class='nav-link text-[14px] font-bold leading-[17.6px]'>Solution</a>
+            <a href="${contactLink}" class='nav-link text-[14px] font-bold leading-[17.6px]'>Contact us</a>
             <!-- <button type="button" class="flex items-center justify-center w-[134px] h-[40px] px-[24px] py-[14px] text-[14px] font-bold text-[black] rounded-[8px]">Button</button> -->
           </div>
 
@@ -44,12 +52,11 @@ class SpecialHeader extends HTMLElement {
           </div>
         </div>
 
-        <div class="mobile-nav md:hidden fixed top-0 left-0 w-full h-screen bg-white z-50 flex flex-col items-start transform ${this.toggle ? 'translate-x-0' : '-translate-x-full'
-      } transition-transform duration-300 ease-in-out">
+        <div class="mobile-nav md:hidden fixed top-0 left-0 w-full h-screen bg-white z-50 flex flex-col items-start transform ${this.toggle ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out">
           <ul class="flex flex-col items-start gap-10 pl-7 text-black font-bold mt-32">
-            <li class="cursor-pointer" data-link="home"><a href="/index.html" class="nav-link">Home</a></li>
-            <li class="cursor-pointer" data-link="solution"><a href="/components/solution/solution.html" class="nav-link">Solution</a></li>
-            <li class="cursor-pointer" data-link="contact"><a href="/components/contact/contact.html" class="nav-link">Contact us</a></li>
+            <li class="cursor-pointer" data-link="home"><a href="${homeLink}" class="nav-link">Home</a></li>
+            <li class="cursor-pointer" data-link="solution"><a href="${solutionLink}" class="nav-link">Solution</a></li>
+            <li class="cursor-pointer" data-link="contact"><a href="${contactLink}" class="nav-link">Contact us</a></li>
             <li class="cursor-pointer" data-link="button"><button type="button" class="mnavb flex items-center justify-center w-[134px] h-[40px] px-[24px] py-[14px] text-[14px] font-bold rounded-[8px]">Button</button></li>
           </ul>
         </div>
@@ -60,7 +67,7 @@ class SpecialHeader extends HTMLElement {
       <div id="easter-egg" class="easter-egg-container" style="display: none;">
         <div class="easter-egg-content">
           <h3>🎉 You found the Easter Egg! 🎉</h3>
-          <p>Happy coding to the awesome Spinovix Developer team! Jairam Deo & Punit Deshmukh 😊
+          <p>Happy coding to the awesome Spinovix Developer team! Jairam Deo, Punit Deshmukh, Vinayak Jadhav 😊
                 </p> </p>
         </div>
       </div>
@@ -194,33 +201,50 @@ class SpecialHeader extends HTMLElement {
   highlightActiveLink() {
     const links = this.querySelectorAll('.nav-link');
     const currentPath = window.location.pathname;
-    
-    // Default to home page if on root or if path ends with index.html
-    const isHomePage = currentPath === '/' || 
-                      currentPath.endsWith('index.html') || 
-                      currentPath.endsWith('/');
-    
+
+    // Define the path mappings based on environment
+    let pathMappings;
+
+    if (this.isLocalDev) {
+      // Local development paths
+      pathMappings = {
+        '/index.html': ['/index.html', '/'],
+        '/components/solution/solution.html': ['/components/solution/solution.html'],
+        '/components/contact/contact.html': ['/components/contact/contact.html']
+      };
+    } else {
+      // Production paths
+      pathMappings = {
+        '/': ['/', '/index', '/index.html'],
+        '/solution': ['/solution', '/components/solution/solution.html'],
+        '/contact': ['/contact', '/components/contact/contact.html']
+      };
+    }
+
     let activeFound = false;
-    
+
+    // Check each link against our path mappings
     links.forEach(link => {
       const href = link.getAttribute('href');
-      
-      // Check if the link matches current path
-      if (href === currentPath) {
-        link.classList.add('active-link');
-        activeFound = true;
-      } else if (isHomePage && href === '/index.html') {
-        // If we're on homepage, activate the home link
-        link.classList.add('active-link');
-        activeFound = true;
-      } else {
+
+      // Check if current path matches any of our mappings
+      for (const [linkPath, possiblePaths] of Object.entries(pathMappings)) {
+        if (possiblePaths.includes(currentPath) && href === linkPath) {
+          link.classList.add('active-link');
+          activeFound = true;
+          break;
+        }
+      }
+
+      if (!activeFound && link.classList.contains('active-link')) {
         link.classList.remove('active-link');
       }
     });
-    
-    // If no active link was found and not on homepage, set home as default
+
+    // If no active link was found, default to home
     if (!activeFound) {
-      const homeLinks = this.querySelectorAll('a[href="/index.html"]');
+      const homeHref = this.isLocalDev ? '/index.html' : '/';
+      const homeLinks = this.querySelectorAll(`a[href="${homeHref}"]`);
       homeLinks.forEach(link => {
         link.classList.add('active-link');
       });
@@ -239,27 +263,27 @@ class SpecialHeader extends HTMLElement {
       timesIcon.classList.add('hidden');
     }
   }
-  
+
   // Easter egg functionality
   handleKeyDown(event) {
     // Add the key to the current sequence
     this.currentSequence.push(event.key);
-    
+
     // Keep only the last N keys where N is the length of the Easter egg code
     if (this.currentSequence.length > this.easterEggCode.length) {
       this.currentSequence.shift();
     }
-    
+
     // Check if the current sequence matches the Easter egg code
     if (JSON.stringify(this.currentSequence) === JSON.stringify(this.easterEggCode)) {
       this.showEasterEgg();
     }
   }
-  
+
   showEasterEgg() {
     const easterEgg = document.getElementById('easter-egg');
     easterEgg.style.display = 'block';
-    
+
     // Hide after 5 seconds
     setTimeout(() => {
       easterEgg.style.animation = 'fadeOut 1s';
