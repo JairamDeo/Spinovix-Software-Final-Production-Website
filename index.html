@@ -45,7 +45,7 @@
             </p>
         </div>
         <div class="border-first-button scroll-to-section py-6 lg:mb-0">
-            <a>Explore our Services</a>
+            <a id="solutionLink">Explore our Services</a>
         </div>
     </div>
 </section>
@@ -658,6 +658,17 @@
 <script src="/js/footer.js"></script>
 <script src="/js/testimonal.js"></script>
 <script src="/js/Marquee.js"></script>
+<script>
+    // Detect if it's local development
+    const isLocalDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+
+    // Decide link based on environment
+    const solutionLink = isLocalDev ? '/components/solution/solution.html' : '/solution';
+
+    // Apply to the <a> tag
+    document.getElementById('solutionLink').href = solutionLink;
+  </script>
+
 <script>
     AOS.init();
 </script>
