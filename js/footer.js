@@ -115,7 +115,7 @@ class SpecialFooter extends HTMLElement {
                         </div>
                     </a>
 
-                    <a href="">
+                    <a href="mailto:spinovix@gmail.com" target="_blank"">
                         <div class="[clip-path:polygon(_50%_0%,_100%_25%,_100%_75%,_50%_100%,_0%_75%,_0%_25%)]  bg-white p-[3px] w-14 h-14 parenthex flex justify-center items-center via-cyan-700 to-linear-bg from-blue-600 -translate-y-[50%]">
                             <div class="[clip-path:polygon(_50%_0%,_100%_25%,_100%_75%,_50%_100%,_0%_75%,_0%_25%)] flex justify-center h-full w-full items-center bg-linear-bg sico">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
