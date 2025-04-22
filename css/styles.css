@@ -5,6 +5,9 @@
 
 
 /* footer styles */
+#root{
+  overflow-x: hidden;
+}
 @layer base {
     :root {
         --primary: 182, 99%, 35%;
