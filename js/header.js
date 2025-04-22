@@ -57,7 +57,7 @@ class SpecialHeader extends HTMLElement {
             <li class="cursor-pointer" data-link="home"><a href="${homeLink}" class="nav-link">Home</a></li>
             <li class="cursor-pointer" data-link="solution"><a href="${solutionLink}" class="nav-link">Solution</a></li>
             <li class="cursor-pointer" data-link="contact"><a href="${contactLink}" class="nav-link">Contact us</a></li>
-            <li class="cursor-pointer" data-link="button"><button type="button" class="mnavb flex items-center justify-center w-[134px] h-[40px] px-[24px] py-[14px] text-[14px] font-bold rounded-[8px]">Button</button></li>
+            <!-- <li class="cursor-pointer" data-link="button"><button type="button" class="mnavb flex items-center justify-center w-[134px] h-[40px] px-[24px] py-[14px] text-[14px] font-bold rounded-[8px]">Button</button></li>
           </ul>
         </div>
       </div>
