@@ -67,7 +67,6 @@
 .fbox {
   position: relative;
   padding: 1.3rem;
-  margin-top: 2rem;
 
   background: linear-gradient(#fff, #fff) padding-box,
     linear-gradient(45deg, #2385C6, #53C4D1) border-box;

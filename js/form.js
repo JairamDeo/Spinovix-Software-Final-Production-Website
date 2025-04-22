@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set the Web3Forms API key
     document.getElementById('web3forms-key').value = "4eb5f853-1c13-407b-bf7b-b3da0f1e8882";
+    
 
 
     const form = document.getElementById('contact-form');
@@ -101,7 +102,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', handleSubmit);
 
+    // Add click event for both the icon and input field
     dropdownIcon.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+        dropdownIcon.classList.toggle('rotate-180');
+    });
+    
+    solutionDisplay.addEventListener('click', () => {
         dropdownMenu.classList.toggle('hidden');
         dropdownIcon.classList.toggle('rotate-180');
     });

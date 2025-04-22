@@ -31,7 +31,7 @@
     <special-header></special-header>
     <!-- contact page code Start here -->
     <div
-        class="sec4s py-[60px] lg:py-[80px] sm:py-[145px] lg:gap-3 lg:px-[96px] lg:gap-[100px] bg-opacity-80 rounded-lg flex flex-col lg:flex-row lg:justify-center lg:justify-center lg:p-8 overflow-x-hidden">
+        class="sec4s py-[60px] lg:py-[80px] sm:py-[145px] lg:px-[96px] lg:gap-[150px] bg-opacity-80 rounded-lg flex flex-col lg:flex-row lg:justify-center lg:justify-center lg:p-8 overflow-x-hidden">
 
         <div class="w-full h-auto lg:w-[446px] lg:h-[549px] sm:h-[800px] flex justify-center mx-auto lg:mx-0"
             data-aos="fade-right" data-aos-duration="2000">
@@ -137,30 +137,49 @@
                             <!--<label class="text-sm lg:text-[16px] text-[#afafaf]" for="solution">What Solution are you looking for?</label> -->
                             <input type="text" id="solution-display"
                                 class="text-[black] w-full px-2 bg-transparent border-b-2 border-[black] border-opacity-10 rounded outline-none cursor-pointer"
-                                disabled required placeholder="What Solution are you looking for?" />
+                                readonly required placeholder="What Solution are you looking for?" />
                             <i id="dropdown-icon" class="fas fa-chevron-down cursor-pointer text-[#afafaf]"></i>
                         </div>
                         <div id="dropdown-menu"
-                            class="absolute hidden text-sm left-0 bottom-full mb-2 w-full rounded-md shadow-lg bg-[#2385C6] backdrop-blur-lg border border-white border-opacity-10 z-40 max-h-72">
+                            class="absolute hidden text-sm left-0 bottom-full mb-2 w-full rounded-md shadow-lg bg-[#2385C6] backdrop-blur-lg border border-white border-opacity-10 z-40 max-h-72 overflow-y-auto">
                             <ul class="p-2">
                                 <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
                                     style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
-                                    Cloud Security
+                                    Website Development
                                 </li>
                                 <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
                                     style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
-                                    Incident Response</li>
+                                    Mobile App Development</li>
                                 <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
                                     style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
-                                    Managed Detection and Response</li>
+                                    AI/ML Development</li>
                                 <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
                                     style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
-                                    Risk and Vulnerability Management</li>
+                                    Cloud Application Development</li>
                                 <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
                                     style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
-                                    Security Awareness Training</li>
-                                <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25">Regulatory
-                                    Compliance</li>
+                                    API Development</li>
+                                <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
+                                    style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
+                                    E-Commerce Platforms</li>
+                                <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
+                                    style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
+                                    Data Analytics & Dashboards</li>
+                                <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
+                                    style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
+                                    Website & App UI/UX Design</li>
+                                <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
+                                    style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
+                                    E-Commerce Design</li>
+                                <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
+                                    style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
+                                    Email Newsletter Design</li>
+                                <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
+                                    style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
+                                    Digital Marketing Services</li>
+                                <li class="cursor-pointer px-2 py-2 hover:bg-white hover:bg-opacity-25"
+                                    style="border-bottom: 1.5px solid; border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #FFFFFF 52%, rgba(255, 255, 255, 0.1) 100%) 1;">
+                                    SEO Optimization</li>
                             </ul>
                         </div>
                         <input type="hidden" name="solution" id="solution">
