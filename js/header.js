@@ -43,7 +43,7 @@ class SpecialHeader extends HTMLElement {
           </div>
 
           <div class="md:hidden flex items-center relative z-[1001]">
-            <span class="toggle-icon bars" aria-hidden="true">
+            <span class="toggle-icon bars cursor-pointer" aria-hidden="true">
               <i class="fas fa-bars text-white text-2xl" aria-hidden="true"></i>
             </span>
             <span class="toggle-icon times hidden" aria-hidden="true">
@@ -52,7 +52,7 @@ class SpecialHeader extends HTMLElement {
           </div>
         </div>
 
-        <div class="mobile-nav md:hidden fixed top-0 left-0 w-full h-screen bg-white z-50 flex flex-col items-start transform ${this.toggle ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out">
+        <div class="mobile-nav md:hidden fixed top-0 left-0 w-full h-screen bg-white z-50 flex flex-col items-start transform ${this.toggle ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-700 ease-in-out">
           <ul class="flex flex-col items-start gap-10 pl-7 text-black font-bold mt-32">
             <li class="cursor-pointer" data-link="home"><a href="${homeLink}" class="nav-link">Home</a></li>
             <li class="cursor-pointer" data-link="solution"><a href="${solutionLink}" class="nav-link">Solution</a></li>
